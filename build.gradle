@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'com.flipos'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    playwrightVersion = '1.25.0'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    // https://mvnrepository.com/artifact/com.microsoft.playwright/playwright
+    implementation "com.microsoft.playwright:playwright:$playwrightVersion"
+}
+
+test {
+    useJUnitPlatform()
+}
